@@ -23,8 +23,41 @@ const Page = {
     },
 };
 
+const Template = {
+    replace: (elem, env) => {
+        for (const key of Object.keys(env)) {
+            elem.innerHTML = elem.innerHTML.replace("%" + key + "%", env[key]);
+        }
+    },
+};
+
+const Age = {
+    bornAt: (day, month, year) => {
+        const now = new Date();
+
+        const dayDiff = now.getDate() - day;
+        const yearDiff = now.getFullYear() - year;
+        const monthDiff = now.getMonth() - month;
+
+        if (monthDiff < 0) {
+            return yearDiff - 1;
+        } else if (monthDiff === 0) {
+            if (dayDiff < 0) {
+                return yearDiff - 1;
+            } else {
+                return yearDiff;
+            }
+        } else {
+            return yearDiff;
+        }
+    },
+};
+
 const main = () => {
-    document.addEventListener("scroll", (_) => Page.autoOpacity());
+    Template.replace(document.getElementById("about-me-text"), {
+        age: Age.bornAt(28, 0, 2005),
+    });
+    //document.addEventListener("scroll", (_) => Page.autoOpacity());
 };
 
 main();
