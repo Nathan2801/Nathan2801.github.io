@@ -9,7 +9,7 @@ const Page = {
         return Math.abs(h*pageNr + h*0.5 - (y + h*0.5));
     },
 
-    update: () => {
+    autoOpacity: () => {
         for (let i = 0; i < Page.pages().length; i++) {
             const page = Page.pages(i);
             const distance = Page.middleDistance(i);
@@ -24,7 +24,7 @@ const Page = {
 };
 
 const main = () => {
-    document.addEventListener("scroll", (_) => Page.update());
+    document.addEventListener("scroll", (_) => Page.autoOpacity());
 };
 
 main();
