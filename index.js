@@ -23,14 +23,6 @@ const Page = {
     },
 };
 
-const Template = {
-    replace: (elem, env) => {
-        for (const key of Object.keys(env)) {
-            elem.innerHTML = elem.innerHTML.replace("%" + key + "%", env[key]);
-        }
-    },
-};
-
 const Age = {
     bornAt: (day, month, year) => {
         const now = new Date();
@@ -54,10 +46,8 @@ const Age = {
 };
 
 const main = () => {
-    Template.replace(document.getElementById("about-me-text"), {
-        age: Age.bornAt(28, 0, 2005),
-    });
     //document.addEventListener("scroll", (_) => Page.autoOpacity());
+    document.getElementById("age").innerHTML = Age.bornAt(28, 0, 2005);
 };
 
 main();
