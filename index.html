@@ -3,7 +3,7 @@
     <head>
         <title>Hello!</title>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.tailwindcss.com" defer></script>
         <script src="index.js" type="module" defer></script>
     </head>
     <body class="text-white">
@@ -12,7 +12,7 @@
             <div class="flex items-center justify-center flex-col relative max-w-lg w-2/3 h-2/3">
                 <h1 class="text-5xl font-semibold mb-2">Johnathan</h1>
                 <p class="text-center text-xl">
-                    Welcome! Here you can view what I've done in my life.
+                    Welcome! This page is about me!
                 </p>
                 <div class="absolute bottom-0">
                     <a class="text-red-100" href="https://github.com/nathan2801">github</a>
@@ -44,7 +44,10 @@
         <!-- :projects -->
         <div class="bg-[#88a] h-screen flex items-center justify-center">
             <div class="flex items-center justify-center flex-col max-x-lg w-2/3 h-2/3">
-                <h1 class="text-5xl font-semibold mb-2">Projects</h1>
+                <h1 class="text-5xl font-semibold mb-2 mb-4">Projects</h1>
+                <div class="bg-[#99a] max-w-lg w-full h-full rounded-md overflow-hidden">
+                    <img class="h-full object-cover" src="assets/project-image-test.jpg"/>
+                </div>
             </div>
         </div>
     </body>
