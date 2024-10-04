@@ -42,11 +42,33 @@
             </div>
         </div>
         <!-- :projects -->
-        <div class="bg-[#88a] h-screen flex items-center justify-center">
+        <div class="bg-indigo-400 h-screen flex items-center justify-center">
             <div class="flex items-center justify-center flex-col max-x-lg w-2/3 h-2/3">
                 <h1 class="text-5xl font-semibold mb-2 mb-4">Projects</h1>
-                <div class="bg-[#99a] max-w-lg w-full h-full rounded-md overflow-hidden">
-                    <img class="h-full object-cover" src="assets/project-image-test.jpg"/>
+                <div id="project-gallery"
+                     class="bg-black flex items-center max-w-lg w-full h-full rounded-md overflow-hidden">
+                    <img id="img-1" src="assets/project-image-test.jpg" class="w-full object-cover"/>
+                    <img id="img-2" src="assets/project-image-test.jpg" class="w-full object-cover hidden sepia"/>
+                </div>
+                <div id="project-indicators" class="flex">
+                    <div onclick="
+                         hideChildren(e('project-gallery'));
+                         unhide(e('img-1'));
+                         removeClassForChildrens('bg-white')(e('project-indicators'));
+                         addClassForChildrens('bg-indigo-300')(e('project-indicators'));
+                         addClass('bg-white')(this);
+                         "
+                         class="w-2 h-2 mt-2 ml-1 mr-1 bg-white rounded-full cursor-pointer">
+                    </div>
+                    <div onclick="
+                         hideChildren(e('project-gallery'));
+                         unhide(e('img-2'));
+                         removeClassForChildrens('bg-white')(e('project-indicators'));
+                         addClassForChildrens('bg-indigo-300')(e('project-indicators'));
+                         addClass('bg-white')(this);
+                         "
+                         class="w-2 h-2 mt-2 ml-1 mr-1 bg-indigo-300 rounded-full cursor-pointer">
+                    </div>
                 </div>
             </div>
         </div>

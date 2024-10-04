@@ -1,53 +1,69 @@
-const Page = {
-    pages: (n) => n === undefined
-        ? document.body.children
-        : document.body.children[n],
-
-    middleDistance: (pageNr) => {
-        const y = window.scrollY;
-        const h = window.innerHeight;
-        return Math.abs(h*pageNr + h*0.5 - (y + h*0.5));
-    },
-
-    autoOpacity: () => {
-        for (let i = 0; i < Page.pages().length; i++) {
-            const page = Page.pages(i);
-            const distance = Page.middleDistance(i);
-            if (distance > window.innerHeight) {
-                page.style.opacity = "0%";
-            } else {
-                const percentage = 100 - distance/window.innerHeight*100 + 50;
-                page.style.opacity = percentage + "%";
-            }
-        }
-    },
+document.e = (id) => {
+    return document.getElementById(id);
 };
 
-const Age = {
-    bornAt: (day, month, year) => {
-        const now = new Date();
+document.hide = (element) => {
+    element.classList.add('hidden');
+};
 
-        const dayDiff = now.getDate() - day;
-        const yearDiff = now.getFullYear() - year;
-        const monthDiff = now.getMonth() - month;
+document.unhide = (element) => {
+    element.classList.remove('hidden');
+};
 
-        if (monthDiff < 0) {
+document.forChildren = (f) => {
+    return (parent) => {
+        for (const children of parent.children) {
+            f(children);
+        }
+    };
+};
+
+document.hideChildren = (parent) => {
+    document.forChildren(document.hide)(parent);
+};
+
+document.addClass = (name) => {
+    return (element) => {
+        element.classList.add(name);
+    };
+};
+
+document.addClassForChildrens = (name) => {
+    return (parent) => {
+        document.forChildren(document.addClass(name))(parent);
+    };
+};
+
+document.removeClass = (name) => {
+    return (element) => {
+        element.classList.remove(name);
+    };
+};
+
+document.removeClassForChildrens = (name) => {
+    return (parent) => {
+        document.forChildren(document.removeClass(name))(parent);
+    };
+};
+
+const ageBornedAt = (day, month, year) => {
+    const now = new Date();
+
+    const dayDiff = now.getDate() - day;
+    const yearDiff = now.getFullYear() - year;
+    const monthDiff = now.getMonth() - month;
+
+    if (monthDiff < 0) {
+        return yearDiff - 1;
+    } else if (monthDiff === 0) {
+        if (dayDiff < 0) {
             return yearDiff - 1;
-        } else if (monthDiff === 0) {
-            if (dayDiff < 0) {
-                return yearDiff - 1;
-            } else {
-                return yearDiff;
-            }
         } else {
             return yearDiff;
         }
-    },
+    } else {
+        return yearDiff;
+    }
 };
 
-const main = () => {
-    //document.addEventListener("scroll", (_) => Page.autoOpacity());
-    document.getElementById("age").innerHTML = Age.bornAt(28, 0, 2005);
-};
-
-main();
+document.getElementById("age").innerHTML = ageBornedAt(28, 0, 2005);
