@@ -28,7 +28,7 @@ header>ul>li {
 }
 
 main {
-    height:     50%;
+    height:     75%;
     margin:     auto;
     max-width:  480px;
 }
@@ -57,6 +57,10 @@ footer>ul>li {
     width:  100%;
 }
 
+.h100p {
+    height: 100%;
+}
+
 .flex-centered {
     display:            flex;
     align-items:        center;
@@ -70,4 +74,12 @@ footer>ul>li {
 .link-list > li {
     display:    inline;
     cursor:     pointer;
+}
+
+#home-page>*:nth-child(1) {
+    height: 70%;
+}
+
+#home-page>*:nth-child(2) {
+    height: 30%;
 }
