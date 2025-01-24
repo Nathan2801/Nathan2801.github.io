@@ -7,18 +7,32 @@
     <body>
         <header class="flex-centered w100p">
             <ul class="link-list">
-                <li class="selected-page">home</li>
-                <li>works</li>
-                <li>about</li>
+                <li onclick="selectPage(this)" class="selected-page">home</li>
+                <li onclick="selectPage(this)">works</li>
+                <li onclick="selectPage(this)">about</li>
             </ul>
         </header>
         <main class="flex-centered w100p">
-            <h1>
+            <h1 id="home-page" class="text-center">
                 Hello, i'm
                 <span style="color: #9cade7">Johnathan</span>
                 and i'm a
                 <span style="color: #ff5a5a">developer</span>
             </h1>
+            <div id="works-page" class="hidden">
+                <div>
+                    <h3>Something</h3>
+                    <p>This is something very interesting...</p>
+                </div>
+                <div>
+                    <h3>Something</h3>
+                    <p>This is something very interesting...</p>
+                </div>
+                <div>
+                    <h3>Something</h3>
+                    <p>This is something very interesting...</p>
+                </div>
+            </div>
         </main>
         <footer class="flex-centered w100p">
             <ul class="link-list">
@@ -26,6 +40,7 @@
                 <li><a href="https://www.linkedin.com/in/johnathan-oliveira-241b552a6">linkedin</a></li>
             </ul>
         </footer>
+        <script src="./script.js"></script>
     </body>
 </html>
 

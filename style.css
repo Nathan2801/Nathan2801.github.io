@@ -31,7 +31,6 @@ main {
     height:     50%;
     margin:     auto;
     max-width:  480px;
-    text-align: center;
 }
 
 footer {
@@ -40,6 +39,14 @@ footer {
 
 footer>ul>li {
     padding:    0 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.text-center {
+    text-align: center;
 }
 
 .selected-page {
