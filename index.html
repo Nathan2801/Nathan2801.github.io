@@ -5,42 +5,51 @@
         <link rel="stylesheet" href="./style.css"/>
     </head>
     <body>
-        <header class="flex-centered w100p">
-            <ul class="link-list">
-                <li onclick="selectPage(this)" class="selected-page">home</li>
-                <li onclick="selectPage(this)">works</li>
-                <li onclick="selectPage(this)">about</li>
+        <header class="f ai-c jc-c w100p">
+            <ul class="link-list mw-d f f-w jc-a w100p">
+                <li onclick="selectPage('home')" class="t-h">home</li>
+                <li onclick="selectPage('works')">works</li>
+                <li onclick="selectPage('about')">about</li>
             </ul>
         </header>
-        <main class="flex-centered w100p">
+        <main class="f jc-c mw-d-all w100p">
+            <!-- home page -->
             <div id="home-page" class="h100p">
-                <div class="flex-centered">
-                    <h1 class="text-center">
+                <div class="f ai-c jc-c">
+                    <h1 class="t-c">
                         Hello, i'm
                         <span style="color: #9cade7">Johnathan</span>
                         and i'm a
                         <span style="color: #ff5a5a">developer</span>
                     </h1>
                 </div>
-                <footer class="flex-centered">
-                    <ul class="link-list">
+                <footer class="f ai-c jc-c">
+                    <ul class="link-list f">
                         <li><a href="https://github.com/Nathan2801">github</a></li>
                         <li><a href="https://www.linkedin.com/in/johnathan-oliveira-241b552a6">linkedin</a></li>
                     </ul>
                 </footer>
             </div>
+            <!-- works page -->
             <div id="works-page" class="h100p w100p hidden">
-                <div>
-                    <h3>Something</h3>
-                    <p>This is something very interesting...</p>
+                <div id="works" class="h100p">
+                    <!-- works are loaded by javascript. -->
                 </div>
+                <p id="scroll-hint">scroll to see more</p>
+                <div id="bottom-gradient"></div>
+            </div>
+            <!-- about page -->
+            <div id="about-page" class="hidden">
                 <div>
-                    <h3>Something</h3>
-                    <p>This is something very interesting...</p>
-                </div>
-                <div>
-                    <h3>Something</h3>
-                    <p>This is something very interesting...</p>
+                    <h3>Abilities</h3>
+                    <p>Advanced english, C, Python, JavaScript, HTML, CSS and more.</p>
+                    <br>
+                    <h3>About</h3>
+                    <p>
+                    I'm a brazilian, 19 years old, I live in the interior of S&atilde;o Paulo,
+                    programming for almost 5 years, I draw since young, and I love music and strategic
+                    games.
+                    </p>
                 </div>
             </div>
         </main>

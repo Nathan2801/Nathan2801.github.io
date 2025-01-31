@@ -1,3 +1,15 @@
+:root {
+    --links:            #aaa;
+    --max-width:        480px;
+    --highlight:        #b2ef8b;
+    --gradient-height:  20vh;
+}
+
+@font-face {
+    font-family:    "fira-code";
+    src:            url("assets/FiraCode-Regular.ttf");
+}
+
 * {
     margin:     0;
     padding:    0;
@@ -11,46 +23,48 @@ body {
     background: black;
 
     font-size:      18pt;
-    font-family:    sans-serif;
+    font-family:    "fira-code", sans-serif;
 }
 
 a {
-    color:              gray;
+    color:              var(--links);
     text-decoration:    none;
+    transition:         0.2s;
+}
+
+a:hover {
+    cursor: pointer;
+    filter: brightness(75%);
+}
+
+p {
+    font-size:      12pt;
+    line-height:    1.5rem;
+}
+
+h1 {
+    font-size:      32pt;
+}
+
+h3 {
+    font-size:      16pt;
+    padding-bottom: 16px;
 }
 
 header {
     height: 25%;
 }
 
-header>ul>li {
-    padding:    0 1rem;
-}
-
 main {
-    height:     75%;
-    margin:     auto;
-    max-width:  480px;
+    height: 75%;
 }
 
-footer {
-    height: 25%;
-}
-
-footer>ul>li {
-    padding:    0 1rem;
+main>div {
+    margin: 0px 32px;
 }
 
 .hidden {
-    display: none;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.selected-page {
-    color:  #b2ef8b;
+    display:    none;
 }
 
 .w100p {
@@ -61,10 +75,40 @@ footer>ul>li {
     height: 100%;
 }
 
-.flex-centered {
-    display:            flex;
-    align-items:        center;
+.f {
+    display: flex;
+}
+
+.f-w {
+    flex-wrap:  wrap;
+}
+
+.ai-c {
+    align-items:    center;
+}
+
+.jc-c {
     justify-content:    center;
+}
+
+.jc-a {
+    justify-content:    space-around;
+}
+
+.mw-d {
+    max-width:  var(--max-width);
+}
+
+.mw-d-all>* {
+    max-width:  var(--max-width);
+}
+
+.t-c {
+    text-align: center;
+}
+
+.t-h {
+    color:  var(--highlight);
 }
 
 .link-list {
@@ -74,6 +118,7 @@ footer>ul>li {
 .link-list > li {
     display:    inline;
     cursor:     pointer;
+    padding:    0 1rem;
 }
 
 #home-page>*:nth-child(1) {
@@ -82,4 +127,58 @@ footer>ul>li {
 
 #home-page>*:nth-child(2) {
     height: 30%;
+}
+
+#works {
+    overflow-y:         scroll;
+    /** hides scrollbar */
+    scrollbar-width:    none;
+    -ms-overflow-style: none;
+    /** make gradient not cover last item */
+    padding-bottom:     var(--gradient-height);
+}
+
+/** hides scrollbar */
+#works::-webkit-scrollbar { 
+    display: none;
+}
+
+#works>div>h3 {
+    padding:        12px 0px;
+    font-weight:    500;
+}
+
+#works>div>p {
+    padding-bottom: 32px;
+}
+
+#works-page {
+    position:   relative;
+}
+
+#scroll-hint {
+    top:            0px;
+    left:           100%;
+    color:          gray;
+    position:       absolute;
+    font-size:      12pt;
+    writing-mode:   vertical-rl;
+}
+
+#bottom-gradient {
+    height:     var(--gradient-height);
+    width:      100vw;
+    left:       0px;
+    bottom:     0px;
+    position:   fixed;
+    background: linear-gradient(transparent 0%, black 75%, black 100%);
+}
+
+@media only screen and (max-width: 359px) {
+    /** Turn indicators to vertical, but I wish
+     *  I had a better solution. */
+    header>ul, footer>ul {
+        align-items:    center;
+        flex-direction: column;
+    }
 }
