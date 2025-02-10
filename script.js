@@ -107,3 +107,9 @@ createWork({
     "A color-selector written in Elm (A language that compiles to javascript).",
     reference: "https://nathan2801.github.io/elmor/", 
 });
+
+createWork({
+    name: "Auto Wordle",
+    description: "A bot written in python and selenium that plays wordle!",
+    reference: "https://github.com/Nathan2801/auto-wordle/"
+});

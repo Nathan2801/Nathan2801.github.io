@@ -143,12 +143,12 @@ main>div {
     display: none;
 }
 
-#works>div>h3 {
+#works>div h3 {
     padding:        12px 0px;
     font-weight:    500;
 }
 
-#works>div>p {
+#works>div p {
     padding-bottom: 32px;
 }
 
