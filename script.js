@@ -7,6 +7,12 @@ const pageIndicators = document.querySelectorAll("header>ul>li");
 const works = document.getElementById("works");
 const scrollHint = document.getElementById("scroll-hint");
 
+const yearsSince = (date) => {
+    const diff = Date.now() - date;
+    const year = new Date(diff).getUTCFullYear();
+    return Math.abs(year - 1970);
+}
+
 const worksCanScroll = () => {
     const child = works.children[0];
     if (child === undefined) return false;
@@ -100,6 +106,9 @@ const createWork = ({
 
     desc.innerHTML = description;
 }
+
+const age = document.querySelector("#age");
+age.innerText = yearsSince(new Date(2005, 0, 28));
 
 createWork({
     name: "Elmor",
