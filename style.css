@@ -1,5 +1,5 @@
 :root {
-    --links:            #aaa;
+    --links:            #aaaaaa;
     --max-width:        480px;
     --highlight:        #b2ef8b;
     --gradient-height:  20vh;
@@ -172,6 +172,30 @@ main>div {
     bottom:     0px;
     position:   fixed;
     background: linear-gradient(transparent 0%, black 75%, black 100%);
+}
+
+#lang-button {
+    appearance: none;
+
+    color:      white;
+    background: transparent;
+    position:   absolute;
+
+    padding:    12px;
+    right:      32px;
+    bottom:     32px;
+
+    border:         1px solid #181818;
+    border-radius:  12px;
+}
+
+#lang-button:hover {
+    cursor: pointer;
+}
+
+#lang-button option {
+    color:      white;
+    background: black;
 }
 
 @media only screen and (max-width: 359px) {
