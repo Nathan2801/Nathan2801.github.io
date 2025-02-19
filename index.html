@@ -1,4 +1,4 @@
-<html lang="en-us">
+<html>
     <head>
         <title>Johnathan's Portfolio</title>
         <meta name="viewport" content="width=device-width, initial-scale=2"/>
@@ -7,20 +7,28 @@
     <body>
         <header class="f ai-c jc-c w100p">
             <ul class="link-list mw-d f f-w jc-a w100p">
-                <li onclick="selectPage('home')" class="t-h">home</li>
-                <li onclick="selectPage('works')">works</li>
-                <li onclick="selectPage('about')">about</li>
+                <li onclick="selectPage(this, 'home')" class="t-h">home</li>
+                <li onclick="selectPage(this, 'works')" lang="en">works</li>
+                <li onclick="selectPage(this, 'works')" lang="pt">trabalhos</li>
+                <li onclick="selectPage(this, 'about')" lang="en">about</li>
+                <li onclick="selectPage(this, 'about')" lang="pt">sobre</li>
             </ul>
         </header>
         <main class="f jc-c mw-d-all w100p">
             <!-- home page -->
             <div id="home-page" class="h100p">
                 <div class="f ai-c jc-c">
-                    <h1 class="t-c">
+                    <h1 class="t-c" lang="en">
                         Hello, i'm
                         <span style="color: #9cade7">Johnathan</span>
                         and i'm a
                         <span style="color: #ff5a5a">developer</span>
+                    </h1>
+                    <h1 class="t-c" lang="pt">
+                        Ol&aacute;, sou o
+                        <span style="color: #9cade7">Johnathan</span>
+                        e sou um
+                        <span style="color: #ff5a5a">desenvolvedor</span>
                     </h1>
                 </div>
                 <footer class="f ai-c jc-c">
@@ -41,21 +49,27 @@
             <!-- about page -->
             <div id="about-page" class="hidden">
                 <div>
-                    <h3>Abilities</h3>
-                    <p>Advanced english, C, Python, JavaScript, HTML, CSS and more.</p>
+                    <h3 lang="en">Abilities</h3>
+                    <h3 lang="pt">Habilidades</h3>
+                    <p lang="en">Advanced english, C, Python, JavaScript, HTML, CSS and more.</p>
+                    <p lang="pt">Ingl&ecirc;s avan&ccedil;ado, C, Python, JavaScript, HTML, CSS e mais.</p>
                     <br>
-                    <h3>About</h3>
-                    <p>
-                    I'm a brazilian, <span id="age">{age}</span> years old, I live in the interior of S&atilde;o Paulo,
-                    programming for almost 5 years, I draw since young, and I love music and strategic
-                    games.
+                    <h3 lang="en">About</h3>
+                    <h3 lang="pt">Sobre</h3>
+                    <p lang="en">
+                    I'm a brazilian, <span class="age">{age}</span> years old, I live in the interior of S&atilde;o Paulo,
+                    programming for almost 5 years, I draw since young, and I love music and strategic games.
+                    </p>
+                    <p lang="pt">
+                    Sou brasileiro, <span class="age">{anos}</span> anos de idade, vivo no interior de S&atilde;o Paulo,
+                    programando por quase 5 anos, desenho desde pequeno, e amo m&uacute;sica e jogos de estrat&eacute;gia.
                     </p>
                 </div>
             </div>
         </main>
-        <select id="lang-button">
+        <select id="lang-button" onchange="setLanguage(this.value)">
             <option value="en" selected>EN</option>
-            <option value="pt">BR</option>
+            <option value="pt">PT</option>
         </select>
         <script src="./script.js"></script>
     </body>

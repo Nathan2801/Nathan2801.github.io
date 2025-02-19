@@ -7,6 +7,21 @@ const pageIndicators = document.querySelectorAll("header>ul>li");
 const works = document.getElementById("works");
 const scrollHint = document.getElementById("scroll-hint");
 
+const languages = ["pt", "en"];
+const setLanguage = (lang) => {
+    if (!languages.includes(lang)) {
+        throw new Error("invalid language: " + lang);
+    }
+    const all = document.querySelectorAll(`[lang]`);
+    for (const e of all) {
+        e.style.display = "none";
+    }
+    const elements = document.querySelectorAll(`[lang="${lang}"]`);
+    for (const e of elements) {
+        e.style.display = "block";
+    }
+}
+
 const yearsSince = (date) => {
     const diff = Date.now() - date;
     const year = new Date(diff).getUTCFullYear();
@@ -21,7 +36,13 @@ const worksCanScroll = () => {
     return worksRect.height < childRect.height * works.children.length;
 }
 
-const selectPage = (page) => {
+const selectPage = (element, page) => {
+    const cls = "t-h";
+    for (const indicator of pageIndicators) {
+        indicator.classList.remove(cls);
+    }
+    element.classList.add(cls);
+
     switch (page) {
         case "home": {
             homePage.classList.remove("hidden");
@@ -44,7 +65,6 @@ const selectPage = (page) => {
         default:
             return false;
     }
-    paintPageIndicator(page);
     return true;
 }
 
@@ -59,27 +79,6 @@ const getCurrentPage = () => {
         return "about";
     }
     return "";
-}
-
-const paintPageIndicator = (page) => {
-    const cls = "t-h";
-    for (const pageIndicator of pageIndicators) {
-        pageIndicator.classList.remove(cls);
-    }
-    switch (page) {
-        case "home": {
-            pageIndicators[0].classList.add(cls);
-        } break;
-        case "works": {
-            pageIndicators[1].classList.add(cls);
-        } break;
-        case "about": {
-            pageIndicators[2].classList.add(cls);
-        } break;
-        default: {
-            throw "unreachable"
-        }
-    }
 }
 
 const createWork = ({
@@ -107,8 +106,12 @@ const createWork = ({
     desc.innerHTML = description;
 }
 
-const age = document.querySelector("#age");
-age.innerText = yearsSince(new Date(2005, 0, 28));
+const age = yearsSince(new Date(2005, 0, 28));
+for (const e of document.querySelectorAll(".age")) {
+    e.innerText = age;
+}
+
+setLanguage(document.querySelector("#lang-button").value);
 
 createWork({
     name: "Elmor",
