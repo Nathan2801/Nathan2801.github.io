@@ -113,6 +113,9 @@ main>div {
 
 .link-list {
     list-style: none;
+    flex-wrap:  wrap;
+
+    justify-content: center;
 }
 
 .link-list > li {
