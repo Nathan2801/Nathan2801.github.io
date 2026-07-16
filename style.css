@@ -1,35 +1,39 @@
 :root {
-    --links:            #aaaaaa;
-    --max-width:        480px;
-    --highlight:        #b2ef8b;
-    --gradient-height:  20vh;
+    --links:     #aaaaaa;
+    --highlight: #b2ef8b;
+
+    --max-width:       480px;
+    --gradient-height: 20vh;
 }
 
 @font-face {
-    font-family:    "fira-code";
-    src:            url("assets/FiraCode-Regular.ttf");
+    src: url("assets/FiraCode-Regular.ttf");
+    font-family: "fira-code";
 }
 
 * {
-    margin:     0;
-    padding:    0;
+    margin:  0;
+    padding: 0;
+
     box-sizing: border-box;
 }
 
 body {
-    width:      100vw;
-    height:     100vh;
+    width:  100vw;
+    height: 100vh;
+
     color:      white;
     background: black;
 
-    font-size:      18pt;
-    font-family:    "fira-code", sans-serif;
+    font-size:   18pt;
+    font-family: "fira-code", sans-serif;
 }
 
 a {
-    color:              var(--links);
-    text-decoration:    none;
-    transition:         0.2s;
+    color: var(--links);
+
+    transition:      0.2s;
+    text-decoration: none;
 }
 
 a:hover {
@@ -38,12 +42,12 @@ a:hover {
 }
 
 p {
-    font-size:      12pt;
-    line-height:    1.5rem;
+    font-size:   12pt;
+    line-height: 1.5rem;
 }
 
 h1 {
-    font-size:      32pt;
+    font-size: 32pt;
 }
 
 h3 {
@@ -64,11 +68,11 @@ main>div {
 }
 
 .hidden {
-    display:    none;
+    display: none;
 }
 
 .w100p {
-    width:  100%;
+    width: 100%;
 }
 
 .h100p {
@@ -80,27 +84,27 @@ main>div {
 }
 
 .f-w {
-    flex-wrap:  wrap;
+    flex-wrap: wrap;
 }
 
 .ai-c {
-    align-items:    center;
+    align-items: center;
 }
 
 .jc-c {
-    justify-content:    center;
+    justify-content: center;
 }
 
 .jc-a {
-    justify-content:    space-around;
+    justify-content: space-around;
 }
 
 .mw-d {
-    max-width:  var(--max-width);
+    max-width: var(--max-width);
 }
 
 .mw-d-all>* {
-    max-width:  var(--max-width);
+    max-width: var(--max-width);
 }
 
 .t-c {
@@ -108,7 +112,7 @@ main>div {
 }
 
 .t-h {
-    color:  var(--highlight);
+    color: var(--highlight);
 }
 
 .link-list {
@@ -119,9 +123,9 @@ main>div {
 }
 
 .link-list > li {
-    display:    inline;
-    cursor:     pointer;
-    padding:    0 1rem;
+    display: inline;
+    cursor:  pointer;
+    padding: 0 1rem;
 }
 
 #home-page>*:nth-child(1) {
@@ -147,8 +151,8 @@ main>div {
 }
 
 #works>div h3 {
-    padding:        12px 0px;
-    font-weight:    500;
+    padding:     12px 0px;
+    font-weight: 500;
 }
 
 #works>div p {
@@ -156,23 +160,27 @@ main>div {
 }
 
 #works-page {
-    position:   relative;
+    position: relative;
 }
 
 #scroll-hint {
-    top:            0px;
-    left:           100%;
-    color:          gray;
-    position:       absolute;
-    font-size:      12pt;
-    writing-mode:   vertical-rl;
+    top:  0px;
+    left: 100%;
+
+    color:     gray;
+    position:  absolute;
+    font-size: 12pt;
+
+    writing-mode: vertical-rl;
 }
 
 #bottom-gradient {
-    height:     var(--gradient-height);
-    width:      100vw;
-    left:       0px;
-    bottom:     0px;
+    left:   0px;
+    bottom: 0px;
+
+    width:  100vw;
+    height: var(--gradient-height);
+
     position:   fixed;
     background: linear-gradient(transparent 0%, black 75%, black 100%);
 }
@@ -184,12 +192,12 @@ main>div {
     background: transparent;
     position:   absolute;
 
-    padding:    12px;
-    right:      32px;
-    bottom:     32px;
+    padding: 12px;
+    right:   32px;
+    bottom:  32px;
 
-    border:         1px solid #181818;
-    border-radius:  12px;
+    border: 1px solid #181818;
+    border-radius: 12px;
 }
 
 #lang-button:hover {
