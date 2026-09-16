@@ -112,23 +112,3 @@ for (const e of document.querySelectorAll(".age")) {
 }
 
 setLanguage(document.querySelector("#lang-button").value);
-
-createWork({
-    name: "Elmor",
-    description:
-    "A color-selector written in Elm (A language that compiles to javascript).",
-    reference: "https://nathan2801.github.io/elmor/", 
-});
-
-createWork({
-    name: "Auto Wordle",
-    description: "A bot written in python and selenium that plays wordle!",
-    reference: "https://github.com/Nathan2801/auto-wordle/"
-});
-
-createWork({
-    name: "Chexs (Game Jam)",
-    description: `A chess puzzle game where the board tiles are hexagons,
-wrote for the Raylib 6.x game jam, the themes were "hex" + "merge".`,
-    reference: "https://sokobo.itch.io/chexs",
-})
