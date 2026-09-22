@@ -8,3 +8,5 @@ This portifolio was created using only HTML, CSS and JavaScript, it goals is to
 be simple, customizable and fast, for that reason I avoid using more complex
 frameworks or technologies.
 
+![VanillaJS](http://vanilla-js.com/assets/button.png)
+
