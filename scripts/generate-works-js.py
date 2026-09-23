@@ -34,7 +34,7 @@ generated_js = ""
 data = json.loads(response.data)
 for repo in data:
     name = repo["name"]
-    link = repo["url"]
+    link = repo["html_url"]
     desc = repo["description"]
     if name in ignore:
         continue
